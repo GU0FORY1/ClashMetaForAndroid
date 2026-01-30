@@ -63,8 +63,9 @@ jobs:
 
       - name: Create local.properties with custom package name
         run: |
-          echo "sdk.dir=$ANDROID_HOME" > local.properties
-          echo "custom.application.id=com.tencent.wemeet.app" >> local.properties 
+          echo "sdk.dir=$ANDROID_HOME" > local.properties  
+          echo "custom.application.id=com.tencent.wemeet.app" >> local.properties
+          echo "remove.suffix=true" > local.properties
           
       - name: Build
         if: success()
