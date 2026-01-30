@@ -61,6 +61,11 @@ jobs:
       #     echo "cat signing.properties"
       #     cat signing.properties
 
+      - name: Create local.properties with custom package name
+        run: |
+          echo "sdk.dir=$ANDROID_HOME" > local.properties
+          echo "custom.application.id=com.tencent.wemeet.app" >> local.properties 
+          
       - name: Build
         if: success()
         run: ./gradlew --no-daemon app:assembleAlphaRelease
